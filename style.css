@@ -1,0 +1,94 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  transition: background-color 2s ease;
+}
+
+#canvas {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  cursor: grab;
+}
+
+/* Base shape style */
+.shape {
+  position: absolute;
+  opacity: 0.9;
+  transition: transform 0.2s ease, filter 0.5s linear;
+  will-change: transform, background-color, filter;
+  animation: float 8s ease-in-out infinite alternate;
+}
+
+/* Rainbow shimmer on hover */
+@keyframes rainbow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+.shape:hover {
+  animation: rainbow 2s linear infinite;
+}
+
+/* Enlarged toggle on click */
+.shape.clicked {
+  transform: scale(1.5) !important;
+}
+
+/* Sizes */
+.square {
+  width: 180px;
+  height: 180px;
+}
+.rectangle {
+  width: 140px;
+  height: 40px;
+}
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.triangle {
+  width: 100;
+  height: 100;
+  border-left: 90px solid transparent;
+  border-right: 90px solid transparent;
+  border-bottom: 90px solid pink;
+  background: none;
+}
+.line {
+  width: 100px;
+  height: 4px;
+}
+
+/* Colors */
+.red {
+  background-color: #e63946;
+}
+.blue {
+  background-color: #3a86ff;
+}
+.yellow {
+  background-color: #ffbe0b;
+}
+.green {
+  background-color: #06d6a0;
+}
+.black {
+  background-color: #1d1d1d;
+}
+.dark {
+  background-color: #444;
+}
+.pink {
+  border-bottom-color: #f72585;
+}
